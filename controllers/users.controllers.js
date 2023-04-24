@@ -111,6 +111,8 @@ usersController.loginUser = async (req, res) => {
         // great, allow this user access
 
         result.password = undefined;
+        // when we have to run test.js then just uncomment this
+        // process.env.JWT_KEY = 123456789
 
         const token = jsonwebtoken.sign(
           {

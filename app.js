@@ -3,7 +3,7 @@ const app = express();
 const http = require("http");
 const path = require("path");
 const server = http.createServer(app);
-require("dotenv").config();
+require('dotenv').config();
 const errorHandler = require("./middleware/error-handler");
 const errorMessage = require("./middleware/error-message");
 const accessControls = require("./middleware/access-controls");
@@ -25,6 +25,11 @@ const UsersRoutes = require("./routes/users.routes");
 const VideosRoutes = require("./routes/videos.routes");
 
 // connection to mongoose
+
+// when we have to run test.js then just uncomment this
+
+// const mongoCon = "mongodb+srv://studentPortal:studentPortal@cluster0.6oc4zjr.mongodb.net/student-portal?retryWrites=true&w=majority&ssl=true";
+
 const mongoCon = process.env.mongoCon;
 
 mongoose
